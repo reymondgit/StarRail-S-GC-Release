@@ -23,7 +23,7 @@ jobs:
 
     - name: Clone
       shell: bash
-      run: git clone --recurse-submodules https://github.com/Z4ee/StarRail-S-GC
+      run: git clone --recurse-submodules https://github.com/ky-ler/StarRail-S-GC
         
     - name: Build solution
       working-directory: ./StarRail-S-GC
@@ -48,5 +48,5 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: StarRail-GC-Release
-        path: ./StarRail-S-GC/x64/Release/*
+        path: ./bld
         if-no-files-found: error
