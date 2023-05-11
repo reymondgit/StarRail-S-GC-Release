@@ -23,7 +23,7 @@ jobs:
 
     - name: Clone
       shell: bash
-      run: git clone --recurse-submodules https://github.com/Z4ee/StarRail-S-GC
+      run: git clone --recurse-submodules https://github.com/ky-ler/StarRail-S-GC
         
     - name: Build solution
       working-directory: ./StarRail-S-GC
@@ -36,17 +36,17 @@ jobs:
       shell: bash
       run: |
         ls -lR --group-directories-first
-        rm -rf ./StarRail-S-GC/x64/Release/*.pdb
-        rm -rf ./StarRail-S-GC/x64/Release/*.ipdb
-        rm -rf ./StarRail-S-GC/x64/Release/*.obj
-        rm -rf ./StarRail-S-GC/x64/Release/*.iobj
-        rm -rf ./StarRail-S-GC/x64/Release/*.txt
-        rm -rf ./StarRail-S-GC/x64/Release/*.recipe
-        rm -rf ./StarRail-S-GC/x64/Release/*.tlog
+        rm -rf ./StarRail-S-GC/Release/*.pdb
+        rm -rf ./StarRail-S-GC/Release/*.ipdb
+        rm -rf ./StarRail-S-GC/Release/*.obj
+        rm -rf ./StarRail-S-GC/Release/*.iobj
+        rm -rf ./StarRail-S-GC/Release/*.txt
+        rm -rf ./StarRail-S-GC/Release/*.recipe
+        rm -rf ./StarRail-S-GC/Release/*.tlog
       
     - name: Upload to github
       uses: actions/upload-artifact@v3.1.2
       with:
         name: StarRail-GC-Release
-        path: ./StarRail-S-GC/x64/Release/*
+        path: ./StarRail-S-GC/Release/*
         if-no-files-found: error
